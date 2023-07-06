@@ -11,5 +11,18 @@
       "16": "logo192.png",
       "48": "logo192.png",
       "128": "logo192.png"
+  },
+  "permissions": [
+    "activeTab"
+ ],
+ "content_scripts": [
+  {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./static/js/content.js"]
   }
+],
+"background": {
+  "service_worker": "background_script.js",
+  "type": "module"
+}
 }

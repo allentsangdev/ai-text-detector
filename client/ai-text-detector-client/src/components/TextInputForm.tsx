@@ -2,10 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import Alert from 'react-bootstrap/Alert';
-
 
 function TextInputForm() {
     return (
