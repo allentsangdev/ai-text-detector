@@ -6,14 +6,7 @@ import Alert from 'react-bootstrap/Alert';
 import { useState } from 'react';
 
 function TextInputForm() {
-    const [highlighedText, setHighlighedText] = useState(null)
-    
-    document.addEventListener('mouseup', function(event: MouseEvent) {
-        var selectedText: string = window.getSelection()?.toString() || '';
-        if (selectedText !== '') {
-            chrome.runtime.sendMessage({ text: selectedText });
-        }
-      })
+    const [highlighedText, setHighlighedText] = useState('')
     
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request.text) {
@@ -22,6 +15,11 @@ function TextInputForm() {
           setHighlighedText(selectedText);
         }
       });
+
+    function handleChange(event:any) {
+        const newValue = event.target.value;
+        setHighlighedText(newValue)
+    }
     
     return (
         <>
@@ -29,7 +27,7 @@ function TextInputForm() {
 
                 <InputGroup>
                     <FloatingLabel controlId="floatingTextarea2" label="Text">
-                        {highlighedText ? <Form.Control as="textarea" aria-label="With textarea" value = {highlighedText} /> : <Form.Control as="textarea" aria-label="With textarea" /> }
+                        <Form.Control as="textarea" aria-label="With textarea" onChange={handleChange} value = {highlighedText} />
                     </FloatingLabel>
                 </InputGroup>
 
