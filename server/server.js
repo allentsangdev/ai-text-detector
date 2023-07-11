@@ -14,3 +14,22 @@ app.use(express.json())
 router.get("/", (req,res) => {
     res.send("<h1>Server On!!!</h1>")
 })
+
+// POST Request: Writer Content Detect
+router.post('/writer/content-detect', async (req,res) => {
+    try {
+        
+
+    } 
+    catch(error) {
+        res.status(500).send(error.message)
+    }
+})
+
+
+
+app.use('/', router)
+
+app.listen(PORT, ()=> {
+    console.log(`Server listening on ${PORT}`)
+})
