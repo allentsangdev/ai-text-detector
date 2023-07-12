@@ -19,7 +19,7 @@ router.get("/", (req,res) => {
 // POST Request: Writer Content Detect
 router.post('/writer/content-detect', async (req,res) => {
     try {
-        const {writerApiKey, organzationId, content } = req.body
+        const {writerApiKey, organizationId, content } = req.body
         const result = await writer_content_detect(writerApiKey, organizationId, content)
         res.status(200).json(result)
     } 
