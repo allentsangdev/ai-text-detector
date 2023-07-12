@@ -2,10 +2,6 @@ const axios = require('axios');
 //const writerApiKey = process.env.WRITER_API_KEY
 //const organizationId = process.env.WRITER_ORG_ID
 //const teamId = process.env.WRITER_TEAM_ID
-//const writerApiKey = '59j1lbS_0Iehk3Z84KMzu1qHAGJi022wRKYa999AAdCXASw5X1aWJkXzmIbqrWBKBKuWfLG1OnPVXPrvUYEu8DdycubJuNyZeTYmdriKb1O8rypWgpfIeHyhkg27v8Va'
-//const organizationId = '568358'
-//const teamId = '575153'
-//const content = 'this is a testing content'
 
 const writer_content_detect = async (writerApiKey, organizationId, content) => {
 
