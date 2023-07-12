@@ -7,7 +7,7 @@ const axios = require('axios');
 //const teamId = '575153'
 //const content = 'this is a testing content'
 
-const writer_content_detect = (writerApiKey, organizationId, content) => {
+const writer_content_detect = async (writerApiKey, organizationId, content) => {
 
     const options = {
       method: 'POST',
@@ -20,7 +20,7 @@ const writer_content_detect = (writerApiKey, organizationId, content) => {
       data: {input: content}
     };
     
-    axios
+    const result = await axios
       .request(options)
       .then(function (response) {
         console.log(response.data);
@@ -30,6 +30,8 @@ const writer_content_detect = (writerApiKey, organizationId, content) => {
         console.error(error.message);
         return error.message
       });
+    
+    return result
 
 }
 
