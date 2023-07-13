@@ -19,8 +19,8 @@ const writer_content_detect = async (writerApiKey, organizationId, content) => {
     const result = await axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
-        return response.data
+        console.log(`There is ${response.data[1].score}% chance that that ocntent is human-generated content`);
+        return response.data[1].score
       })
       .catch(function (error) {
         console.error(error.message);
